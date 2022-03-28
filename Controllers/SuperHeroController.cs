@@ -8,7 +8,7 @@ namespace SuperHeroAPI.Controllers
     [ApiController]
     public class SuperHeroController : ControllerBase
     {
-        private static List<SuperHero> heroes = new List<SuperHero>
+        //private static List<SuperHero> heroes = new List<SuperHero>
             //{
             //    new SuperHero
             //    {
@@ -85,7 +85,7 @@ namespace SuperHeroAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<SuperHero>>> Delete(int id)
         {
-            var dbHero = await _context.SuperHeroes.FindAsync(request.Id);
+            var dbHero = await _context.SuperHeroes.FindAsync(id);
 
             if (dbHero == null)
                 return BadRequest("Hero Not Found.");
